@@ -4,7 +4,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  background: #DFD6C1;
+  background-image: url('/src/assets/keyboard_garden_bg_dark.png');
+  background-size: 100px 100px;
+  background-repeat: repeat;
+  opacity: 1 !important;
   overflow: hidden;
 }
 
