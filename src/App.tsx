@@ -1,11 +1,16 @@
 import { useAppSelector } from './hooks'
 import { desktopItems } from './data/items'
+import { useAppDispatch } from './hooks.ts';
+
 import DocumentWindow from './features/documents/DocumentWind'
 import Icon from './components/Icon'
 import './App.css'
 
+import { closeWindow } from './features/windows/windowsSlice'
+
 function App() {
   const windows = useAppSelector(state => state.windows.byId)
+  const dispatch = useAppDispatch();
 
   return (
     <div className="desktop">
@@ -35,7 +40,7 @@ function App() {
         >
           <div className="window-header">
             <span>{window.itemId}</span>
-            <button>×</button>
+            <button onClick={() => dispatch(closeWindow({ id: window.id }))}>×</button>
           </div>
           <div className="window-content">
             <DocumentWindow id={window.itemId} />

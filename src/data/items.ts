@@ -27,3 +27,6 @@ export const desktopItems: DesktopItem[] = [
     children: ["link", "link2", "doc"],
   },
 ];
+
+export const itemById = (id: string): DesktopItem | undefined =>
+  desktopItems.find((item) => item.id === id);
