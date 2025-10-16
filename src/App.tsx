@@ -1,34 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useAppSelector } from './hooks'
+import { desktopItems } from './data/items'
+import DocumentWindow from './features/documents/DocumentWind'
+import Icon from './components/Icon'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const windows = useAppSelector(state => state.windows.byId)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="desktop">
+      <div className="desktop-items">
+        {desktopItems.map(item => (
+          <div 
+            key={item.id} 
+            className="desktop-item"
+          >
+            <Icon id={item.id} name={item.name} icon={item.icon} />
+            <span>{item.name}</span>
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      
+      {Object.values(windows).map(window => (
+        <div 
+          key={window.id}
+          className="window"
+          style={{
+            left: window.x,
+            top: window.y,
+            width: window.width,
+            height: window.height,
+            zIndex: window.z
+          }}
+        >
+          <div className="window-header">
+            <span>{window.itemId}</span>
+            <button>×</button>
+          </div>
+          <div className="window-content">
+            <DocumentWindow id={window.itemId} />
+          </div>
+        </div>
+      ))}
+    </div>
   )
 }
 
