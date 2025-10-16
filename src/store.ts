@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./features/counter/counterSlice";
+import windowsReducer from "./features/windows/windowsSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    windows: windowsReducer,
   },
 });
 
