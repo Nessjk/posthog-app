@@ -7,6 +7,7 @@ import Icon from './components/Icon'
 import './App.css'
 
 import { closeWindow } from './features/windows/windowsSlice'
+import hireBlocksImage from './assets/hire-blocks.png'
 
 function App() {
   const windows = useAppSelector(state => state.windows.byId)
@@ -47,6 +48,12 @@ function App() {
           </div>
         </div>
       ))}
+      
+      <img 
+        src={hireBlocksImage} 
+        alt="Hire blocks" 
+        className="hire-blocks-image"
+      />
     </div>
   )
 }

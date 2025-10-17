@@ -171,3 +171,12 @@
   overflow-y: auto;
   line-height: 1.6;
 }
+
+.hire-blocks-image {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 800px;
+  max-height: 800px;
+  z-index: 1;
+}
