@@ -16,14 +16,14 @@ export const desktopItems: DesktopItem[] = [
     id: "why-me",
     name: "Why me?",
     kind: "doc",
-    icon: "doc",
+    icon: "posthog-icon",
     initialMarkdown: why_me_md,
   },
   {
     id: "side-projects",
     name: "Side Projects",
     kind: "folder",
-    icon: "folder",
+    icon: "folder-icon",
     children: ["link", "link2", "doc"],
   },
 ];
