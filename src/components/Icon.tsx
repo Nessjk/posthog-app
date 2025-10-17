@@ -33,7 +33,7 @@ export default function Icon({ id, name, icon }: Props) {
 
   return (
     <button className="icon" onClick={onClick} title={name}>
-      {src ? <img src={src} alt="" width={32} height={32} /> : <div className="icon-emoji">❔</div>}
+      {src ? <img src={src} alt="" width={40} height={40} /> : <div className="icon-emoji">❔</div>}
       {/* <div className="icon-name">{name}</div> */}
     </button>
   );
