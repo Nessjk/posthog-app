@@ -18,7 +18,10 @@ import { closeWindow } from "./features/windows/windowsSlice";
 import hireBlocksImage from "./assets/hire-blocks.png";
 
 function App() {
+  // used for getting the windows state from the redux store
   const windows = useAppSelector((state) => state.windows.byId);
+
+  // used for ispatching actions like focusWindow, moveWindow, closeWindow etc.
   const dispatch = useAppDispatch();
 
   const [isDragging, setIsDragging] = useState<string | null>(null);
@@ -91,7 +94,7 @@ function App() {
         ))}
       </div>
 
-      {/* Using redux really messed the perofmrnace and created a big performance bottleneck. */}
+      {/* Using redux really messed the performance here and made the moving really laggy.  */}
       {/* So we're using local state for the dragging and resizing. */}
       {/* not sure how this holds up in production. */}
       {Object.values(windows).map((window) => (
