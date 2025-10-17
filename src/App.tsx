@@ -21,7 +21,7 @@ function App() {
             className="desktop-item"
           >
             <Icon id={item.id} name={item.name} icon={item.icon} />
-            <span>{item.name}</span>
+            <span className="desktop-item-name">{item.name}</span>
           </div>
         ))}
       </div>
