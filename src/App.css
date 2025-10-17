@@ -179,4 +179,5 @@
   max-width: 800px;
   max-height: 800px;
   z-index: 1;
+  filter: drop-shadow(8px 8px 12px rgba(0, 0, 0, 0.4));
 }
