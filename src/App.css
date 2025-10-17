@@ -181,3 +181,22 @@
   z-index: 1;
   filter: drop-shadow(8px 8px 12px rgba(0, 0, 0, 0.4));
 }
+
+.window {
+  /* existing styles */
+  resize: both; /* This enables basic resizing */
+}
+
+/* Or for custom resize handles: */
+.resize-handle {
+  position: absolute;
+  background: transparent;
+}
+
+.resize-handle-se { /* bottom-right corner */
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  cursor: se-resize;
+}

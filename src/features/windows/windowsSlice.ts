@@ -14,6 +14,14 @@ export type WindowState = {
 type WindowsState = { byId: Record<string, WindowState> };
 const initialState: WindowsState = { byId: {} };
 
+// In the openWindow action, replace the hardcoded values with:
+const viewportWidth = window.innerWidth;
+const viewportHeight = window.innerHeight;
+
+// bit random width and height based on the viewport size just so that the window doesn't take up the whole screen nor doesn't look smushed
+const defaultWidth = Math.min(800, Math.max(520, viewportWidth * 0.6));
+const defaultHeight = Math.min(600, Math.max(360, viewportHeight * 0.7));
+
 const windowsSlice = createSlice({
   name: "windows",
   initialState,
@@ -27,8 +35,8 @@ const windowsSlice = createSlice({
           x: 60,
           y: 60,
           z: Date.now(),
-          width: 520,
-          height: 360,
+          width: defaultWidth,
+          height: defaultHeight,
           focused: true,
         };
       }
@@ -36,6 +44,16 @@ const windowsSlice = createSlice({
     },
     closeWindow(state, action: PayloadAction<{ id: string }>) {
       delete state.byId[action.payload.id];
+    },
+
+    resizeWindow(
+      state,
+      action: PayloadAction<{ id: string; width: number; height: number }>
+    ) {
+      const w = state.byId[action.payload.id];
+      if (!w) return;
+      w.width = action.payload.width;
+      w.height = action.payload.height;
     },
     focusWindow(state, action: PayloadAction<{ id: string }>) {
       const w = state.byId[action.payload.id];
