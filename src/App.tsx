@@ -119,7 +119,12 @@ function App() {
             className="window-header"
             onMouseDown={(e) => handleMouseDown(e, window)}
           >
-            <span>{window.itemId}</span>
+            <span>
+              {window.itemId
+                .split("-")
+                .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+                .join(" ")}
+            </span>
             <button onClick={() => dispatch(closeWindow({ id: window.id }))}>
               ×
             </button>
