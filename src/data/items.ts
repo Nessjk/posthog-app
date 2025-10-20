@@ -18,6 +18,7 @@ import why_me_md from "../content/why_me.md?raw";
 import do_more_weird_md from "../content/do_more_weird.md?raw";
 import candidate_hand_md from "../content/candidate-hand.md?raw";
 import candidate_foot_md from "../content/candidate-foot.md?raw";
+import pizza_preference_md from "../content/pizza-preference.md?raw";
 
 export const allItems: DesktopItem[] = [
   {
@@ -41,7 +42,7 @@ export const allItems: DesktopItem[] = [
     name: "My Documents",
     kind: "folder",
     icon: "folder-icon",
-    children: ["why-me-2", "do-more-weird"],
+    children: ["why-me-2", "do-more-weird", "pizza-preference"],
     level: "desktop",
   },
   {
@@ -99,6 +100,14 @@ export const allItems: DesktopItem[] = [
     kind: "doc",
     icon: "word-icon",
     initialMarkdown: do_more_weird_md,
+    level: "nested",
+  },
+  {
+    id: "pizza-preference",
+    name: "pizza-preference.docx",
+    kind: "doc",
+    icon: "word-icon",
+    initialMarkdown: pizza_preference_md,
     level: "nested",
   },
 

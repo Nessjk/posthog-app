@@ -74,7 +74,7 @@ function App() {
 
   // Focus the window when clicked
   const handleWindowClick = (e: React.MouseEvent, window: WindowState) => {
-    console.log("Clicking window:", window.id, "current z:", window.z);
+    // console.log("Clicking window:", window.id, "current z:", window.z);
 
     e.stopPropagation();
     dispatch(focusWindow({ id: window.id }));
