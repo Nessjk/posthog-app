@@ -74,7 +74,7 @@ export const allItems: DesktopItem[] = [
     name: "Trash",
     kind: "folder",
     icon: "trash-icon",
-    children: ["candidate-hand", "candidate-foot"],
+    children: ["candidate-hand", "candidate-foot", "resume-2011"],
     level: "desktop",
   },
   {
@@ -99,6 +99,15 @@ export const allItems: DesktopItem[] = [
     kind: "doc",
     icon: "word-icon",
     initialMarkdown: do_more_weird_md,
+    level: "nested",
+  },
+
+  {
+    id: "resume-2011",
+    name: "resume_2011_final_final_2.pdf",
+    kind: "link",
+    icon: "pdf-icon",
+    url: "https://drive.google.com/file/d/1jXHx4tlUlwR5wUzit5Xn34HQrEhbKGKU/view?usp=sharing",
     level: "nested",
   },
 ];
