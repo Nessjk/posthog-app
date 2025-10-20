@@ -200,3 +200,31 @@
   height: 10px;
   cursor: se-resize;
 }
+
+.folder-content {
+  padding: 20px;
+  height: 100%;
+  overflow: auto;
+}
+
+.folder-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.folder-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.folder-item-name {
+  font-size: 12px;
+  margin-top: 5px;
+  word-break: break-word;
+  max-width: 80px;
+}

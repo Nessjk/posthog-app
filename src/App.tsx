@@ -10,7 +10,9 @@ import {
   type WindowState,
 } from "./features/windows/windowsSlice";
 
-import DocumentWindow from "./features/documents/DocumentWind";
+// Document and Folder Windows
+import WindowContent from "./components/WindowContent";
+
 import Icon from "./components/Icon";
 import "./App.css";
 
@@ -130,7 +132,7 @@ function App() {
             </button>
           </div>
           <div className="window-content">
-            <DocumentWindow id={window.itemId} />
+            <WindowContent itemId={window.itemId} />
           </div>
         </div>
       ))}
