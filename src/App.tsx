@@ -141,7 +141,7 @@ function App() {
           </div>
           <div
             className="window-content"
-            onClick={(e) => handleWindowClick(e, window)}
+            onMouseDown={(e) => handleWindowClick(e, window)}
           >
             <WindowContent itemId={window.itemId} />
           </div>

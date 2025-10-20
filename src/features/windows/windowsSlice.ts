@@ -11,8 +11,8 @@ export type WindowState = {
   focused: boolean;
 };
 
-type WindowsState = { byId: Record<string, WindowState> };
-const initialState: WindowsState = { byId: {} };
+type WindowsState = { byId: Record<string, WindowState>; zCounter: number };
+const initialState: WindowsState = { byId: {}, zCounter: 0 };
 
 // In the openWindow action, replace the hardcoded values with:
 const viewportWidth = window.innerWidth;
@@ -48,7 +48,7 @@ const windowsSlice = createSlice({
           itemId: id,
           x: Math.min(newX, maxX),
           y: Math.min(newY, maxY),
-          z: Date.now(),
+          z: ++state.zCounter,
           width: defaultWidth,
           height: defaultHeight,
           focused: true,
@@ -71,13 +71,11 @@ const windowsSlice = createSlice({
     },
     focusWindow(state, action: PayloadAction<{ id: string }>) {
       const w = state.byId[action.payload.id];
-
       if (!w) return;
-      w.focused = true;
 
-      // In focusWindow, find the highest existing z and add 1
-      const maxZ = Math.max(...Object.values(state.byId).map((w) => w.z), 0);
-      w.z = maxZ + 1;
+      w.focused = true;
+      w.z = ++state.zCounter;
+
       Object.values(state.byId).forEach((other) => {
         if (other.id !== w.id) other.focused = false;
       });
