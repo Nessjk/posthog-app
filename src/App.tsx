@@ -72,6 +72,14 @@ function App() {
     dispatch,
   ]);
 
+  // Focus the window when clicked
+  const handleWindowClick = (e: React.MouseEvent, window: WindowState) => {
+    console.log("Clicking window:", window.id, "current z:", window.z);
+
+    e.stopPropagation();
+    dispatch(focusWindow({ id: window.id }));
+  };
+
   // Add event listeners
   useEffect(() => {
     if (isDragging) {
@@ -131,7 +139,10 @@ function App() {
               ×
             </button>
           </div>
-          <div className="window-content">
+          <div
+            className="window-content"
+            onClick={(e) => handleWindowClick(e, window)}
+          >
             <WindowContent itemId={window.itemId} />
           </div>
         </div>

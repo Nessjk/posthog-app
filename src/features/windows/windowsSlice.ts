@@ -29,11 +29,25 @@ const windowsSlice = createSlice({
     openWindow(state, action: PayloadAction<{ itemId: string }>) {
       const id = action.payload.itemId; // one window per item
       if (!state.byId[id]) {
+        // Calculate position to avoid overlap
+        const existingWindows = Object.values(state.byId);
+        const offset = 30; // pixels to offset each new window
+        const baseX = 60;
+        const baseY = 60;
+
+        // Calculate new position based on number of existing windows
+        const newX = baseX + existingWindows.length * offset;
+        const newY = baseY + existingWindows.length * offset;
+
+        // Ensure window stays within viewport bounds
+        const maxX = viewportWidth - defaultWidth;
+        const maxY = viewportHeight - defaultHeight;
+
         state.byId[id] = {
           id,
           itemId: id,
-          x: 60,
-          y: 60,
+          x: Math.min(newX, maxX),
+          y: Math.min(newY, maxY),
           z: Date.now(),
           width: defaultWidth,
           height: defaultHeight,
@@ -57,9 +71,13 @@ const windowsSlice = createSlice({
     },
     focusWindow(state, action: PayloadAction<{ id: string }>) {
       const w = state.byId[action.payload.id];
+
       if (!w) return;
       w.focused = true;
-      w.z = Date.now();
+
+      // In focusWindow, find the highest existing z and add 1
+      const maxZ = Math.max(...Object.values(state.byId).map((w) => w.z), 0);
+      w.z = maxZ + 1;
       Object.values(state.byId).forEach((other) => {
         if (other.id !== w.id) other.focused = false;
       });
