@@ -15,6 +15,9 @@ export type DesktopItem = {
 };
 
 import why_me_md from "../content/why_me.md?raw";
+import do_more_weird_md from "../content/do_more_weird.md?raw";
+import candidate_hand_md from "../content/candidate-hand.md?raw";
+import candidate_foot_md from "../content/candidate-foot.md?raw";
 
 export const allItems: DesktopItem[] = [
   {
@@ -30,7 +33,15 @@ export const allItems: DesktopItem[] = [
     name: "Side Projects",
     kind: "folder",
     icon: "folder-icon",
-    children: ["figjam-link", "github-profile", "why-me-2"],
+    children: ["figjam-link", "github-profile"],
+    level: "desktop",
+  },
+  {
+    id: "my-documents",
+    name: "My Documents",
+    kind: "folder",
+    icon: "folder-icon",
+    children: ["why-me-2", "do-more-weird"],
     level: "desktop",
   },
   {
@@ -38,7 +49,7 @@ export const allItems: DesktopItem[] = [
     name: "This website planning",
     kind: "link",
     icon: "figma-icon",
-    url: "https://www.google.com",
+    url: "https://www.figma.com/board/iU5MIReElcxwqgCUMWRnHN/Posthog?node-id=0-1&t=QeXLdzlg8Yu8pFIG-1",
     level: "nested",
   },
   {
@@ -63,8 +74,32 @@ export const allItems: DesktopItem[] = [
     name: "Trash",
     kind: "folder",
     icon: "trash-icon",
-    children: [],
+    children: ["candidate-hand", "candidate-foot"],
     level: "desktop",
+  },
+  {
+    id: "candidate-hand",
+    name: "candidate-hand.md",
+    kind: "doc",
+    icon: "word-icon",
+    initialMarkdown: candidate_hand_md,
+    level: "nested",
+  },
+  {
+    id: "candidate-foot",
+    name: "candidate-foot.md",
+    kind: "doc",
+    icon: "word-icon",
+    initialMarkdown: candidate_foot_md,
+    level: "nested",
+  },
+  {
+    id: "do-more-weird",
+    name: "do-more-weird.docx",
+    kind: "doc",
+    icon: "word-icon",
+    initialMarkdown: do_more_weird_md,
+    level: "nested",
   },
 ];
 
