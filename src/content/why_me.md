@@ -27,7 +27,11 @@ Here's my equation for "Why Tony?":
 
 ## ❤️ The Emotional Answer
 
-I want to be part of an amazing team that sits at the cross-section of data, analytics, and building software. I'm inspired by helping businesses understand the impact of the apps they build and send out into this world—and being part of a big opportunity while doing it.
+I want to be part of an amazing team that sits at the cross-section of data, analytics, and building software.
+
+I'm inspired to help businesses understand the impact they have on this world through analytics.
+
+I was blown away when I started using your application. It's what I want as an analytics tool!
 
 ---
 
