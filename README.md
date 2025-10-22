@@ -1,5 +1,7 @@
 # 🦔 My PostHog Application (a.k.a. "webhog" or "fakehog")
 
+![App Overview](/app-overview.png)
+
 So... I built a fake desktop OS to apply for a job. Normal? Probably not. Fun? Absolutely.
 
 As a Vue.js developer, I needed to "learn" React for this app. I read through the documentation and completed the tic-tac-toe tutorial, which provided a solid foundation. Many concepts transfer smoothly between frameworks, so the learning curve was much much much less steep.
