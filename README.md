@@ -9,7 +9,9 @@ This is an interactive portfolio/resume/application disguised as a retro desktop
 Double click for folders, single click for links and docs.
 Click around and hopefully I made you smile, like your website did...I hope I emptied that trash. 🗑️
 
-**Live Demo**: [Add the vercel url as soon as deployed HEERRREEE]
+The image took a lot of trial and error. Midjourney wasn't cooperating but the new nano Banana model managed eventually... to get writing on the blocks!
+
+**Live Demo**: https://posthog-app.vercel.app/[https://posthog-app.vercel.app/]
 
 ## 🎯 What Is This Thing?
 
@@ -86,7 +88,7 @@ pnpm install
 pnpm dev
 ```
 
-For PostHog analytics to work, you'll need to set `VITE_POSTHOG_KEY` in your environment.
+For PostHog analytics to work, you'll need to set `VITE_POSTHOG_KEY` & `VITE_PUBLIC_POSTHOG_HOST` in your environment ofc!
 
 ## 📁 Project Structure
 
