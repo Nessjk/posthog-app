@@ -25,6 +25,7 @@ import clean_podium_md from "../content/clean_podium.md?raw";
 import ticker_lab_md from "../content/ticker_lab.md?raw";
 import finviz_scrape_md from "../content/finviz_scrape.md?raw";
 import behind_posthog_md from "../content/behind-posthog.md?raw";
+import how_long_it_took_md from "../content/how-long-it-took.md?raw";
 
 export const allItems: DesktopItem[] = [
   {
@@ -129,11 +130,25 @@ export const allItems: DesktopItem[] = [
   },
 
   {
-    id: "behind",
+    id: "how-long-it-took",
+    name: "How long it took",
+    kind: "doc",
+    icon: "word-icon",
+    level: "nested",
+    initialMarkdown: how_long_it_took_md,
+  },
+
+  {
+    id: "behind-the-scenes",
     name: "Behind the scenes",
     kind: "folder",
     icon: "folder-icon",
-    children: ["figjam-link", "github-project-link", "posthog-analytics"],
+    children: [
+      "figjam-link",
+      "github-project-link",
+      "posthog-analytics",
+      "how-long-it-took",
+    ],
     level: "desktop",
   },
 
