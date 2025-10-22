@@ -4,14 +4,14 @@ So... I built a fake desktop OS to apply for a job. Normal? Probably not. Fun? A
 
 As a Vue.js developer, I needed to "learn" React for this app. I read through the documentation and completed the tic-tac-toe tutorial, which provided a solid foundation. Many concepts transfer smoothly between frameworks, so the learning curve was much much much less steep.
 
-This is an interactive portfolio/resume/application disguised as a retro desktop interface. Highly inspired by posthog.com I think.
+This is an interactive portfolio/resume/application disguised as a retro desktop interface. Highly inspired by [posthog.com](https://posthog.com) I think.
 
 Double click for folders, single click for links and docs.
 Click around and hopefully I made you smile, like your website did...I hope I emptied that trash. 🗑️
 
 The image took a lot of trial and error. Midjourney wasn't cooperating but the new nano Banana model managed eventually... to get writing on the blocks!
 
-**Live Demo**: https://posthog-app.vercel.app/[https://posthog-app.vercel.app/]
+**Live Demo**: [https://posthog-app.vercel.app/](https://posthog-app.vercel.app/)
 
 ## 🎯 What Is This Thing?
 
