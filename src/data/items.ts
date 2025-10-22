@@ -22,6 +22,8 @@ import pizza_preference_md from "../content/pizza-preference.md?raw";
 import my_career_hub_md from "../content/my_carrer_hub.md?raw";
 import many_more_md from "../content/many_more.md?raw";
 import clean_podium_md from "../content/clean_podium.md?raw";
+import ticker_lab_md from "../content/ticker_lab.md?raw";
+import finviz_scrape_md from "../content/finviz_scrape.md?raw";
 
 export const allItems: DesktopItem[] = [
   {
@@ -78,7 +80,7 @@ export const allItems: DesktopItem[] = [
     name: "Stock Trading Review App - 2022 ",
     kind: "doc",
     icon: "coffin-icon",
-    // initialMarkdown: my_career_hub_md,
+    initialMarkdown: ticker_lab_md,
     level: "nested",
   },
 
@@ -96,7 +98,7 @@ export const allItems: DesktopItem[] = [
     name: "Daily Financial Scraper - 2021",
     kind: "doc",
     icon: "coffin-icon",
-    // initialMarkdown: my_career_hub_md,
+    initialMarkdown: finviz_scrape_md,
     level: "nested",
   },
   {
