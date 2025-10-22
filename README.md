@@ -109,4 +109,4 @@ src/
 
 ## 🤔 Why Build This?
 
-Because PostHog's application asked me to "do more weird stuff," and I took that seriously. Also, traditional resumes are boring, and I wanted to ship something that showed rather than told. You are looker for builders after all, right?
+I wanted to ship something that showed rather than told. Builders over sayers!
