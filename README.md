@@ -1,6 +1,6 @@
-# 🦔 My PostHog Application (a.k.a. "webhog" or "fakehog")
+# 🦔 My PostHog Application (a.k.a. "webhog" or "fakehog" )
 
-![App Overview](/app-overview.png)
+<img src="/app-overview.png" alt="App Overview" style="width: 100%; max-width: 900px;" />
 
 So... I built a fake desktop OS to apply for a job. Normal? Probably not. Fun? Absolutely.
 
