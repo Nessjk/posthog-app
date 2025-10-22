@@ -19,6 +19,9 @@ import do_more_weird_md from "../content/do_more_weird.md?raw";
 import candidate_hand_md from "../content/candidate-hand.md?raw";
 import candidate_foot_md from "../content/candidate-foot.md?raw";
 import pizza_preference_md from "../content/pizza-preference.md?raw";
+import my_career_hub_md from "../content/my_carrer_hub.md?raw";
+import many_more_md from "../content/many_more.md?raw";
+import clean_podium_md from "../content/clean_podium.md?raw";
 
 export const allItems: DesktopItem[] = [
   {
@@ -34,7 +37,83 @@ export const allItems: DesktopItem[] = [
     name: "Side Projects",
     kind: "folder",
     icon: "folder-icon",
-    children: ["figjam-link", "github-profile"],
+    children: [
+      "clean-podium",
+      "pinstation",
+      "my-career-hub",
+      "ticker-lab",
+      "finviz-financial-scraper",
+      "many-more",
+    ],
+    level: "desktop",
+  },
+  {
+    id: "demo",
+    name: "demo.mov",
+    kind: "link",
+    icon: "multimedia-icon",
+    url: "https://drive.google.com/file/d/1Jd9xnzxBMM9X1C4DpNiKpS5p1f98UgPg/view?usp=sharing",
+    level: "desktop",
+  },
+  {
+    id: "my-career-hub",
+    name: "Job Board - 2023 ",
+    kind: "doc",
+    icon: "coffin-icon",
+    initialMarkdown: my_career_hub_md,
+    level: "nested",
+  },
+  {
+    id: "clean-podium",
+    name: "Clean Podium - 2025",
+    // name: "Product Ingredients Insight - 2025 ",
+    kind: "doc",
+    icon: "word-icon",
+    initialMarkdown: clean_podium_md,
+    level: "nested",
+  },
+
+  {
+    id: "ticker-lab",
+    name: "Stock Trading Review App - 2022 ",
+    kind: "doc",
+    icon: "coffin-icon",
+    // initialMarkdown: my_career_hub_md,
+    level: "nested",
+  },
+
+  // {
+  //   id: "pinstation",
+  //   name: "Pinterest Keyword Planner - 2025 ",
+  //   kind: "doc",
+  //   icon: "word-icon",
+  //   // initialMarkdown: my_career_hub_md,
+  //   level: "nested",
+  // },
+
+  {
+    id: "finviz-financial-scraper",
+    name: "Daily Financial Scraper - 2021",
+    kind: "doc",
+    icon: "coffin-icon",
+    // initialMarkdown: my_career_hub_md,
+    level: "nested",
+  },
+  {
+    id: "many-more",
+    name: "Many more...",
+    kind: "doc",
+    icon: "coffin-icon",
+    initialMarkdown: many_more_md,
+    level: "nested",
+  },
+
+  {
+    id: "handy-links",
+    name: "Handy links",
+    kind: "folder",
+    icon: "folder-icon",
+    children: ["github-profile", "figjam-link"],
     level: "desktop",
   },
   {
@@ -45,6 +124,7 @@ export const allItems: DesktopItem[] = [
     children: ["why-me-2", "do-more-weird", "pizza-preference"],
     level: "desktop",
   },
+
   {
     id: "figjam-link",
     name: "This website planning",
@@ -62,15 +142,6 @@ export const allItems: DesktopItem[] = [
     level: "nested",
   },
   {
-    id: "why-me-2",
-    name: "Why me?",
-    kind: "doc",
-    icon: "posthog-icon",
-    initialMarkdown: why_me_md,
-    level: "nested",
-  },
-
-  {
     id: "trash",
     name: "Trash",
     kind: "folder",
@@ -78,6 +149,7 @@ export const allItems: DesktopItem[] = [
     children: ["candidate-hand", "candidate-foot", "resume-2011"],
     level: "desktop",
   },
+
   {
     id: "candidate-hand",
     name: "candidate-hand.md",
