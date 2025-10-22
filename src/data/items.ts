@@ -117,7 +117,7 @@ export const allItems: DesktopItem[] = [
     name: "Handy links",
     kind: "folder",
     icon: "folder-icon",
-    children: ["github-profile"],
+    children: ["github-profile", "linkedin-profile"],
     level: "desktop",
   },
   {
@@ -182,6 +182,14 @@ export const allItems: DesktopItem[] = [
     kind: "link",
     icon: "github-icon",
     url: "https://github.com/Nessjk",
+    level: "nested",
+  },
+  {
+    id: "linkedin-profile",
+    name: "Linkedin Profile",
+    kind: "link",
+    icon: "linkedin-icon",
+    url: "https://www.linkedin.com/in/tony-rositano/",
     level: "nested",
   },
   {
