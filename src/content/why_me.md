@@ -27,7 +27,7 @@ The exponent is crucial here. **Customer value** is the multiplier that matters 
 
 ## ❤️ The Emotional Answer
 
-[USER TO FILL: Add your emotional reason here - what drives you beyond the data?]
+I want to be part of an amazing team that sits at the cross-section of data, analytics, and building software. I'm inspired by helping businesses understand the impact of the apps they build and send out into this world—and being part of a big opportunity while doing it.
 
 ---
 
