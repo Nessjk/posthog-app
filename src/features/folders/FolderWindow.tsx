@@ -3,6 +3,9 @@ import { allItems, type DesktopItem } from "../../data/items";
 import { openWindow } from "../windows/windowsSlice";
 import { useAppDispatch } from "../../hooks.ts";
 
+import { trackItemOpen } from "../../analytics/helper.ts";
+import { type ReducedDesktopItem } from "../../components/Icon";
+
 import Icon from "../../components/Icon"; // Add this import
 
 type Props = { id: string };
@@ -21,11 +24,20 @@ export default function FolderWindow({ id }: Props) {
       .filter((item): item is DesktopItem => item !== undefined) || [];
 
   const handleItemClick = (item: DesktopItem) => {
+    // For simplicity tracking less data, making sure this type is used everywhere posthog is tracking
+    const reducedDesktopItem: ReducedDesktopItem = {
+      id: item.id,
+      name: item.name,
+      kind: item.kind,
+    };
+
     switch (item.kind) {
       case "link":
+        trackItemOpen(reducedDesktopItem);
         window.open(item.url, "_blank");
         break;
       case "doc":
+        trackItemOpen(reducedDesktopItem);
         dispatch(openWindow({ itemId: item.id }));
         break;
       default:

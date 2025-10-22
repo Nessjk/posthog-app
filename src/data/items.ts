@@ -24,6 +24,7 @@ import many_more_md from "../content/many_more.md?raw";
 import clean_podium_md from "../content/clean_podium.md?raw";
 import ticker_lab_md from "../content/ticker_lab.md?raw";
 import finviz_scrape_md from "../content/finviz_scrape.md?raw";
+import behind_posthog_md from "../content/behind-posthog.md?raw";
 
 export const allItems: DesktopItem[] = [
   {
@@ -132,7 +133,7 @@ export const allItems: DesktopItem[] = [
     name: "Behind the scenes",
     kind: "folder",
     icon: "folder-icon",
-    children: ["figjam-link", "github-project-link"],
+    children: ["figjam-link", "github-project-link", "posthog-analytics"],
     level: "desktop",
   },
 
@@ -150,6 +151,14 @@ export const allItems: DesktopItem[] = [
     kind: "link",
     icon: "github-icon",
     url: "https://github.com/Nessjk/posthog-app",
+    level: "nested",
+  },
+  {
+    id: "posthog-analytics",
+    name: "PostHog Analytics",
+    kind: "doc",
+    icon: "posthog-icon",
+    initialMarkdown: behind_posthog_md,
     level: "nested",
   },
   {

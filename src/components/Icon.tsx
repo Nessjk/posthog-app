@@ -3,11 +3,19 @@ import { useAppDispatch } from "../hooks.ts";
 import { openWindow } from "../features/windows/windowsSlice";
 import { iconUrl } from "../icons";
 import { itemById } from "../data/items";
+import { trackItemOpen } from "../analytics/helper.ts";
 
 type Props = {
   id: string;
   name: string;
   icon: string;
+};
+
+export type ReducedDesktopItem = {
+  id: string;
+  name: string;
+  kind: "folder" | "doc" | "link";
+  url?: string;
 };
 
 export default function Icon({ id, name, icon }: Props) {
@@ -24,13 +32,30 @@ export default function Icon({ id, name, icon }: Props) {
     // Get the item to check its kind
     const item = itemById(id);
 
-    // Handle links differently - open URL instead of window
-    if (item?.kind === "link") {
-      window.open(item.url, "_blank");
+    if (!item) {
+      console.error(`Item not found for id: ${id}`);
+      return;
     }
 
+    // Tracking the item open for analytics
+    const reducedDesktopItem: ReducedDesktopItem = {
+      id,
+      name,
+      kind: item?.kind,
+    };
+
+    // Handle links differently - open URL instead of window
+    if (item?.kind === "link") {
+      trackItemOpen(reducedDesktopItem);
+
+      // open the actual link in a new tab
+      window.open(item.url, "_blank");
+    }
     // For other items, use double-click to open window
-    if (now - lastClick.current < 300) dispatch(openWindow({ itemId: id }));
+    if (now - lastClick.current < 300) {
+      dispatch(openWindow({ itemId: id }));
+      trackItemOpen(reducedDesktopItem);
+    }
 
     lastClick.current = now;
   };
