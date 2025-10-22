@@ -15,6 +15,12 @@ The platform enabled traders to:
 - **Performance Analytics**: Get comprehensive stats on trading performance
 - **Visual Insights**: Gallery view of each trade, ability to do complex filtering to find an edge
 
+## 📸 Screenshots
+
+![Ticker Lab Landing Page](/tickerlab-landing.png)
+
+![Ticker Lab Application](/tickerlab-app.png)
+
 ## 🛠️ Technical Stack
 
 Built with a solid foundation:

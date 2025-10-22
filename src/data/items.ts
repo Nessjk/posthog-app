@@ -115,7 +115,7 @@ export const allItems: DesktopItem[] = [
     name: "Handy links",
     kind: "folder",
     icon: "folder-icon",
-    children: ["github-profile", "figjam-link"],
+    children: ["github-profile"],
     level: "desktop",
   },
   {
@@ -128,11 +128,28 @@ export const allItems: DesktopItem[] = [
   },
 
   {
+    id: "behind",
+    name: "Behind the scenes",
+    kind: "folder",
+    icon: "folder-icon",
+    children: ["figjam-link", "github-project-link"],
+    level: "desktop",
+  },
+
+  {
     id: "figjam-link",
     name: "This website planning",
     kind: "link",
     icon: "figma-icon",
     url: "https://www.figma.com/board/iU5MIReElcxwqgCUMWRnHN/Posthog?node-id=0-1&t=QeXLdzlg8Yu8pFIG-1",
+    level: "nested",
+  },
+  {
+    id: "github-project-link",
+    name: "Github Repo",
+    kind: "link",
+    icon: "github-icon",
+    url: "https://github.com/Nessjk/posthog-app",
     level: "nested",
   },
   {
